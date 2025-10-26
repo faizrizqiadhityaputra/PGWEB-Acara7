@@ -1,208 +1,154 @@
-<html>
-<body>
-
+index php
 <?php
+
+include 'vars.php';
+
+// Perintah dasar
 echo "Hallo semuanya!";
-?>
+echo "<br><br>";
 
-<hr>
-
-<?php
-//Ini adalah komentar yg akan diabaikan
+// Komentar
+// Ini adalah komentar yg akan diabaikan
 /*
 Dan ini adalah
 satu blok komentar
 */
-?>
+echo "Komentar tidak akan ditampilkan.";
+echo "<br><br>";
 
-<hr>
-
-<?php
+// Variabel
 $kata = "Ini Tes";
 $angka = 88;
-?>
+echo "Isi variabel \$kata: " . $kata . "<br>";
+echo "Isi variabel \$angka: " . $angka . "<br>";
+echo "<br><br>";
 
-<hr>
-
-<?php
+// String
 $teks = "Hallo semuanya!";
 echo $teks;
-?>
+echo "<br><br>";
 
-<hr>
-
-<?php
+// Operator penggabungan string
 $teks = "Hallo semuanya!";
-$teks2= "12345";
-echo $teks . " " .$teks2;
-?>
+$teks2 = "12345";
+echo $teks . " " . $teks2;
+echo "<br><br>";
 
-<hr>
-
-<?php
+// Mengetahui panjang string
 echo strlen("Hallo semuanya!");
-?>
+echo "<br><br>";
 
-<hr>
+// Mencari karakter di dalam string
+echo strpos("Hallo semuanya!", "semua");
+echo "<br><br>";
 
-<?php
-echo strpos("Hallo semuanya!","semua");
-?>
-
-<hr>
-
-<?php
+// Array numerik
 $nama[0] = "Joko";
 $nama[1] = "Parto";
 $nama[2] = "Jono";
-echo $nama[1]." dan ".$nama[2]." adalah tetangga Pak ".$nama[0];
-?>
+echo $nama[1] . " dan " . $nama[2] . " adalah tetangga Pak " . $nama[0];
+echo "<br><br>";
 
-<hr>
-
-<?php
-$umur['Joko'] = "33";
-$umur['Parto'] = "35";
-$umur['Jono'] = "29";
-?>
-
-<hr>
-
-<?php
-$keluarga = array
-(
-    "Joko"=>array("Jojon","Joni","Joana"),
-    "Parto"=>array("Parmi"),
-    "Warto"=>array("Warman","Warno","Warmin")
-);
-echo $keluarga["Joko"][2]." adalah anggota keluarga Joko";
-?>
-
-<hr>
-
-<?php
-$d=date("D");
-if ($d=="Sat")
+// Menggunakan if..else
+$d = date("D");
+if ($d == "Sat") {
     echo "Selamat berakhir pekan!";
-else
+} else {
     echo "Semoga hari anda menyenangkan!";
-?>
+}
+echo "<br>";
 
-<hr>
-
-<?php
-$d=date("D");
-if ($d=="Sat")
-{
+$d = date("D");
+if ($d == "Sat") {
     echo "Hallo!<br />";
     echo "Selamat berakhir pekan! ";
     echo "Sampai jumpa di hari Senin!";
 }
-?>
+echo "<br><br>";
 
-<hr>
-
-<?php
-$d=date("D");
-if ($d=="Sat")
+// Menggunakan elseif
+$d = date("D");
+if ($d == "Fri") {
     echo "Selamat berakhri pekan!";
-elseif ($d=="Sun")
+} elseif ($d == "Sun") {
     echo "Semoga hari Minggu anda menyenangkan!";
-else
+} else {
     echo "Semoga hari anda menyenangkan!";
-?>
+}
+echo "<br><br>";
 
-<hr>
-
-<?php
+// Menggunakan switch
 $x = 2;
-switch ($x)
-{
-case 1: echo "Angka 1"; break;
-case 2: echo "Angka 2"; break;
-case 3: echo "Angka 3"; break;
-default:echo "Bukan angka antara 1 sampai 3";
+switch ($x) {
+    case 1:
+        echo "Angka 1";
+        break;
+    case 2:
+        echo "Angka 2";
+        break;
+    case 3:
+        echo "Angka 3";
+        break;
+    default:
+        echo "Bukan angka antara 1 sampai 3";
 }
-?>
+echo "<br><br>";
 
-<hr>
-
-<?php
-$i=1;
-while($i<=5)
-{ 
+// Menggunakan while
+$i = 1;
+while ($i <= 5) {
     echo "Angka " . $i . "<br />";
     $i++;
 }
-?>
+echo "<br><br>";
 
-<hr>
-
-<?php
-$i=0;
-do
-{
+// Menggunakan do...while
+$i = 0;
+do {
     $i++;
     echo "Angka " . $i . "<br />";
-}
-while ($i<5);
-?>
+} while ($i < 5);
+echo "<br><br>";
 
-<hr>
-
-<?php
-for ($i=1; $i<=5; $i++)
-{
+// Menggunakan for
+for ($i = 1; $i <= 5; $i++) {
     echo "Hello World!<br />";
 }
-?>
+echo "<br><br>";
 
-<hr>
-
-<?php
-$arr=array("satu", "dua", "tiga");
-foreach ($arr as $nilai)
-{
+// Menggunakan foreach
+$arr = array("satu", "dua", "tiga");
+foreach ($arr as $nilai) {
     echo "Nilai: " . $nilai . "<br />";
 }
-?>
+echo "<br><br>";
 
-<hr>
+// Menggunakan built-in function (include)
+echo "Sebuah $buah $warna"; //Sebuah
+include 'vars.php';
+echo "<br>Sebuah $buah $warna"; //Sebuah apel hijau
+echo "<br><br>";
 
-<?php
+// Membuat dan menggunakan function
 function tulisNama()
 {
     echo "Merapi";
 }
 tulisNama();
-?>
+echo "<br><br>";
 
-<hr>
+// Passing Variabel via URL
+echo "<a href=vars_get.php?nama=Merapi&alamat=Sleman>Gunung</a>";
+echo "<p>Klik link di atas, untuk melihat hasilnya.</p>";
+echo "<br><br>";
 
-<?php
-echo "<a href='?nama=Merapi&alamat=Sleman'>Gunung</a><br>";
-
-if (isset($_GET['nama']) && isset($_GET['alamat'])) {
-    $nama = $_GET['nama'];
-    $alamat = $_GET['alamat'];
-    echo "Nama gunung adalah Gunung $nama beralamat di $alamat";
-}
-?>
-
-<hr>
-
-<form action="" method="post">
+// Form Handling
+echo <<<HTML
+<form action="welcome.php" method="post">
 Nama: <input type="text" name="nama" />
 Umur: <input type="text" name="umur" />
 <input type="submit" value="Kirim"/>
 </form>
+HTML;
 
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    echo "Selamat datang " . $_POST["nama"] . ".<br/>";
-    echo "Umur anda " . $_POST["umur"] . " tahun.";
-}
 ?>
-
-</body>
-</html>

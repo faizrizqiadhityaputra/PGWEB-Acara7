@@ -1,4 +1,3 @@
-index php
 <?php
 
 include 'vars.php';
@@ -29,7 +28,7 @@ echo $teks;
 echo "<br><br>";
 
 // Operator penggabungan string
-$teks = "Hallo semuanya!";
+$teks  = "Hallo semuanya!";
 $teks2 = "12345";
 echo $teks . " " . $teks2;
 echo "<br><br>";
@@ -48,6 +47,38 @@ $nama[1] = "Parto";
 $nama[2] = "Jono";
 echo $nama[1] . " dan " . $nama[2] . " adalah tetangga Pak " . $nama[0];
 echo "<br><br>";
+
+// Array asosiatif
+// $umur = array("Joko"=>33, "Parto"=>35, "Jono"=>29);
+// Untuk hasil yang sama dengan contoh diatas bisa juga dilakukan dengan cara:
+$umur['Joko'] = "33";
+$umur['Parto'] = "35";
+$umur['Jono'] = "29";
+echo "Umur Pak Joko adalah " . $umur['Joko'] . " tahun.";
+echo "<br><br>";
+
+
+// Array multidimensi
+$keluarga = array(
+    "Joko" => array(
+        "Jojon",
+        "Joni",
+        "Joana"
+    ),
+    "Parto" => array(
+        "Parmi"
+    ),
+    "Warto" => array(
+        "Warman",
+        "Warno",
+        "Warmin"
+    )
+);
+
+// Menampilkan salah satu isi dari array multidimensi
+echo $keluarga["Joko"][2] . " adalah anggota keluarga Joko";
+echo "<br><br>";
+
 
 // Menggunakan if..else
 $d = date("D");
@@ -124,9 +155,9 @@ foreach ($arr as $nilai) {
 echo "<br><br>";
 
 // Menggunakan built-in function (include)
-echo "Sebuah $buah $warna"; //Sebuah
+echo "Sebuah $buah $warna"; // Sebuah
 include 'vars.php';
-echo "<br>Sebuah $buah $warna"; //Sebuah apel hijau
+echo "<br>Sebuah $buah $warna"; // Sebuah apel hijau
 echo "<br><br>";
 
 // Membuat dan menggunakan function
@@ -138,16 +169,16 @@ tulisNama();
 echo "<br><br>";
 
 // Passing Variabel via URL
-echo "<a href=vars_get.php?nama=Merapi&alamat=Sleman>Gunung</a>";
+echo "<a href='vars_get.php?nama=Merapi&alamat=Sleman'>Gunung</a>";
 echo "<p>Klik link di atas, untuk melihat hasilnya.</p>";
 echo "<br><br>";
 
 // Form Handling
 echo <<<HTML
 <form action="welcome.php" method="post">
-Nama: <input type="text" name="nama" />
-Umur: <input type="text" name="umur" />
-<input type="submit" value="Kirim"/>
+    Nama: <input type="text" name="nama" />
+    Umur: <input type="text" name="umur" />
+    <input type="submit" value="Kirim"/>
 </form>
 HTML;
 
